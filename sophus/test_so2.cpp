@@ -26,7 +26,7 @@
 
 #include "so2.hpp"
 #include "tests.hpp"
-
+#define M_PI_2 M_PI/2.0
 using namespace Sophus;
 using namespace std;
 

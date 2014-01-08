@@ -1,10 +1,19 @@
 #ifndef SOPUHS_TESTS_HPP
 #define SOPUHS_TESTS_HPP
-
+#ifdef WIN32
+#include <windows.h>
+#endif
 #include <vector>
 #include <unsupported/Eigen/MatrixFunctions>
 
 #include "sophus.hpp"
+#ifdef WIN32
+#define M_PI_2 M_PI/2.0
+
+inline int isnan(double T) {
+    return _isnan(T);
+}
+#endif
 
 namespace Sophus {
 
