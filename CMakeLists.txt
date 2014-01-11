@@ -19,6 +19,12 @@ IF (CMAKE_COMPILER_IS_GNUCXX )
                    -Wno-unused-but-set-variable -Wno-unknown-pragmas ")
 ENDIF()
 
+if(WIN32)
+  add_definitions(-DEIGEN_DONT_ALIGN_STATICALLY  # this is unusual
+                  -DNOMINMAX   # resolve conflicts of std::min()/std::max() on Windows MSVC
+                 )
+endif(WIN32)
+
 ################################################################################
 # Add local path for finding packages, set the local version first
 set( CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" )
