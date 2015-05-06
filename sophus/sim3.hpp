@@ -336,7 +336,7 @@ public:
    */
   EIGEN_STRONG_INLINE
   void setScale(const Scalar & scale) const {
-    rxso3().setScale(scale);
+    const_cast<RxSO3Reference&>(rxso3()).setScale(scale);
   }
 
   /**
