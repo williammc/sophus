@@ -331,7 +331,7 @@ public:
   EIGEN_STRONG_INLINE
   void setScale(const Scalar & scale) {
     quaternion().normalize();
-    quaternion() = quaternion().operator*(Eigen::UniformScaling<double>(scale));
+    quaternion() = quaternion().operator*(Eigen::UniformScaling<Scalar>(scale));
   }
 
   /**
